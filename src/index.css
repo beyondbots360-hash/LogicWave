@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand-blue-50: #ececfa;
+    --brand-blue-100: #d9d9f5;
+    --brand-blue-200: #b4b4ea;
+    --brand-blue-300: #8e8fdf;
+    --brand-blue-400: #696ad4;
+    --brand-blue-500: #191A66;
+    --brand-blue-600: #141552;
+    --brand-blue-700: #0f103d;
+    --brand-blue-800: #0a0a29;
+    --brand-blue-900: #050514;
+
+    --brand-yellow-50: #fdf9f0;
+    --brand-yellow-100: #fbf2e1;
+    --brand-yellow-200: #f6e5c3;
+    --brand-yellow-300: #f1d8a5;
+    --brand-yellow-400: #ebca87;
+    --brand-yellow-500: #EEA104;
+    --brand-yellow-600: #be8103;
+    --brand-yellow-700: #8f6102;
+    --brand-yellow-800: #5f4002;
+    --brand-yellow-900: #302001;
+
+    --brand-bg: #ffffff;
+    --brand-text: #0f172a;
+    --brand-muted: #64748b;
+    --brand-border: #e2e8f0;
+    --brand-surface: #f8fafc;
+  }
+
+  /* ── Reduced Motion Support ── */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--brand-bg);
+    color: var(--brand-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  }
+
+  ::selection {
+    background: rgba(25, 26, 102, 0.1);
+    color: #191A66;
+  }
+}
+
+@layer components {
+  /* ── Buttons (HirXpert Style: Pill-shaped) ── */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full
+           bg-brand-blue-500 text-white font-bold text-sm
+           hover:bg-brand-blue-600 active:scale-95
+           transition-all duration-300 shadow-xl
+           hover:shadow-2xl hover:-translate-y-0.5;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full
+           border-2 border-brand-blue-50 text-brand-blue-600 font-bold text-sm
+           hover:border-brand-blue-500 hover:bg-brand-blue-50
+           transition-all duration-300 hover:-translate-y-0.5;
+  }
+
+  /* ── Cards (HirXpert Style: White, Elevation) ── */
+  .card {
+    @apply bg-white border border-brand-border rounded-3xl p-8
+           shadow-sm transition-all duration-500;
+  }
+
+  .card-hover {
+    @apply card hover:shadow-2xl
+           hover:-translate-y-2 cursor-pointer;
+  }
+
+  /* ── Inputs (HirXpert Style: Underlined) ── */
+  .input-field {
+    @apply w-full bg-transparent border-b-2 border-brand-border py-4
+           text-brand-text placeholder-brand-muted text-sm font-medium
+           focus:outline-none focus:border-brand-blue-500
+           transition-all duration-300;
+  }
+
+  .input-label {
+    @apply block text-[10px] font-extrabold text-brand-muted uppercase tracking-[0.2em] mb-2;
+  }
+
+  /* ── Badges ── */
+  .badge-blue {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-full text-[11px] font-bold
+           bg-brand-blue-50 text-brand-blue-600 border border-brand-blue-100;
+  }
+
+  /* ── Section Label ── */
+  .section-label {
+    @apply text-[11px] font-extrabold tracking-[0.4em] uppercase text-brand-blue-500 mb-6;
+  }
+
+  /* ── Mask Reveal Container ── */
+  .mask-reveal {
+    @apply overflow-hidden block;
+  }
+
+  .mask-reveal-inner {
+    @apply block;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+}
