@@ -8,6 +8,7 @@ import SignupPage      from './pages/auth/SignupPage';
 import BlogFeed        from './pages/BlogFeed';
 import BlogPostDetail  from './pages/BlogPostDetail';
 import ContactPage     from './pages/ContactPage';
+import CaseStudiesPage from './pages/CaseStudiesPage';
 import PlaceholderPage from './pages/PlaceholderPage';
 
 // Shared (admin + contractor)
@@ -47,7 +48,7 @@ function App() {
           <Route path="/blog/:slug"  element={<BlogPostDetail />} />
           <Route path="/contact"     element={<ContactPage />} />
           <Route path="/about"       element={<PlaceholderPage title="About Us" />} />
-          <Route path="/case-studies" element={<PlaceholderPage title="Case Studies" />} />
+          <Route path="/case-studies" element={<CaseStudiesPage />} />
 
           {/* ── Shared: admin + contractor ── */}
           <Route path="/dashboard" element={
