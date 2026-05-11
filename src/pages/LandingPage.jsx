@@ -5,6 +5,7 @@ import {
   ArrowRight, ShieldCheck, FileText, Users, Star, Phone
 } from 'lucide-react';
 import PublicLayout from '../components/layout/PublicLayout';
+import ServicesSection from '../components/sections/ServicesSection';
 
 /* ── Animation Variants ── */
 const maskReveal = {
@@ -189,23 +190,7 @@ const LandingPage = () => {
         </section>
 
         {/* ── Services Section ── */}
-        <section className="py-32 px-8 bg-white">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center max-w-2xl mx-auto mb-20">
-              <p className="text-brand-blue-500 font-bold uppercase tracking-[0.3em] text-[11px] mb-4">Our Services</p>
-              <h2 className="font-display text-5xl font-black tracking-tight text-brand-text mb-6">
-                Human Resources Services
-              </h2>
-              <p className="text-brand-muted font-medium">Providing top-tier HR solutions for the modern workplace.</p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {features.map((f, i) => (
-                <FeatureCard key={f.title} {...f} delay={i * 0.1} />
-              ))}
-            </div>
-          </div>
-        </section>
+        <ServicesSection />
 
         {/* ── About Section ── */}
         <section className="py-24 px-8 bg-brand-slate-50">
