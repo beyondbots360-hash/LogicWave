@@ -1,6 +1,6 @@
 import React from 'react';
 import PublicNavbar from './PublicNavbar';
-import { MapPin, Mail, Phone, ArrowUpRight } from 'lucide-react';
+import { MapPin, Mail, Phone, ArrowUpRight, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 /* Brand social icons as inline SVG – lucide-react does not export Linkedin/Twitter/Instagram */
