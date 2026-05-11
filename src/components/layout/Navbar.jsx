@@ -1,10 +1,7 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+
 import { Bell, Search, Globe } from 'lucide-react';
 
 const Navbar = () => {
-  const [searchOpen, setSearchOpen] = useState(false);
-
   return (
     <header className="fixed top-0 left-64 right-0 h-16 bg-brand-dark/80 backdrop-blur-md border-b border-brand-border z-30 flex items-center px-6 gap-4">
       {/* Search */}

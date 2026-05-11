@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Layout from '../components/layout/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import {
   Save, Eye, ArrowLeft, List, Link as LinkIcon,
-  Settings, ShieldCheck, CheckCircle, Globe,
+  Settings, ShieldCheck, CheckCircle,
   Send, Bot, Sparkles, Search, LayoutTemplate,
   Image as ImageIcon, CheckCircle2, PanelLeftClose, PanelLeftOpen
 } from 'lucide-react';
@@ -35,6 +35,7 @@ const BlogEditor = () => {
   const [title, setTitle] = useState('');
   const [slug, setSlug] = useState('');
   const [category, setCategory] = useState('Global Payroll');
+  // eslint-disable-next-line no-unused-vars
   const [metaDesc, setMetaDesc] = useState('');
   const [keywords, setKeywords] = useState('');
 

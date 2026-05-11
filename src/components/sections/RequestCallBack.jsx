@@ -1,5 +1,3 @@
-import React from 'react';
-
 const RequestCallBack = () => {
   return (
     <section className="bg-[#0f172a] py-24 px-8 relative overflow-hidden">

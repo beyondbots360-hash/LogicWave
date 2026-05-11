@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useState } from 'react';
 import { Send, Bot, Sparkles, Image as ImageIcon, Search, LayoutTemplate, CheckCircle2, ChevronLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 

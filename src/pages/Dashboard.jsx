@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate, Navigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import Layout from '../components/layout/Layout';
 import { useAuth } from '../context/AuthContext';
 import { supabase } from '../lib/supabaseClient';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Users, FileText, CreditCard, TrendingUp,
+  Users, FileText, CreditCard,
   Clock, CheckCircle, AlertCircle, ArrowUpRight,
-  Building2, ShieldCheck, Plus
+  ShieldCheck, Plus
 } from 'lucide-react';
 
 const fadeUp = {
@@ -20,7 +20,7 @@ const stagger = {
   show: { transition: { staggerChildren: 0.1 } },
 };
 
-const KPICard = ({ icon: Icon, label, value, sub, delay }) => (
+const KPICard = ({ icon: Icon, label, value, sub }) => (
   <motion.div
     variants={fadeUp}
     whileHover={{ y: -5, shadow: '0 20px 40px -15px rgba(14,140,231,0.1)' }}
@@ -46,12 +46,6 @@ const Dashboard = () => {
   
   const [pendingBlogs, setPendingBlogs] = useState([]);
 
-  useEffect(() => {
-    if (isAdmin) {
-      fetchPendingBlogs();
-    }
-  }, [isAdmin]);
-
   const fetchPendingBlogs = async () => {
     try {
       const { data, error } = await supabase
@@ -66,6 +60,13 @@ const Dashboard = () => {
       console.error('Error fetching pending blogs:', error.message);
     }
   };
+
+  useEffect(() => {
+    if (isAdmin) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      fetchPendingBlogs();
+    }
+  }, [isAdmin]);
 
   const handleBlogAction = async (id, newStatus) => {
     try {

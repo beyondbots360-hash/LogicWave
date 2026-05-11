@@ -1,8 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Layout from '../components/layout/Layout';
 import { useAuth } from '../context/AuthContext';
-import { motion } from 'framer-motion';
-import { User, Mail, Shield, Building2, Save, CreditCard, Landmark } from 'lucide-react';
+import { User, Mail, Building2, Save, Landmark } from 'lucide-react';
 import { supabase } from '../lib/supabaseClient';
 
 const SettingsPage = () => {

@@ -1,12 +1,11 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import Layout from '../components/layout/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ShieldCheck, Download, CheckCircle, X, Trash2 } from 'lucide-react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import SignatureCanvas from 'react-signature-canvas';
 
 const ContractDetail = () => {
-  const navigate = useNavigate();
   const sigCanvas = useRef({});
   const [signed, setSigned] = useState(false);
   const [showSignModal, setShowSignModal] = useState(false);

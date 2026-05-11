@@ -1,9 +1,8 @@
-import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
-  ArrowLeft, Calendar, User, ArrowUpRight, 
-  MessageSquare, Bookmark, Link as LinkIcon 
+  ArrowUpRight, 
+  Bookmark, Link as LinkIcon 
 } from 'lucide-react';
 import PublicLayout from '../components/layout/PublicLayout';
 

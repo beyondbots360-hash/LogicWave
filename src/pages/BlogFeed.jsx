@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, User, ArrowRight, Search, Filter } from 'lucide-react';
+import { Calendar, ArrowRight, Search, Filter } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import PublicLayout from '../components/layout/PublicLayout';
 

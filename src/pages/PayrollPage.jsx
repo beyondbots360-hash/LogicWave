@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Layout from '../components/layout/Layout';
-import { motion } from 'framer-motion';
 import { 
-  CreditCard, TrendingUp, Calendar, Download, 
-  ArrowUpRight, Info, CheckCircle2, DollarSign, Wallet, ArrowRight
+  TrendingUp, Calendar, Download, 
+  Info, CheckCircle2, Wallet, ArrowRight
 } from 'lucide-react';
 import { mockPayrolls } from '../lib/mockData';
 

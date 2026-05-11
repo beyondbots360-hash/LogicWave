@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Sidebar from './Sidebar';
 import { useAuth } from '../../context/AuthContext';
-import { LogOut, Menu, X } from 'lucide-react';
+import { LogOut, Menu } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const Layout = ({ children }) => {

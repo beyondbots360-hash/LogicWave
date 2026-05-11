@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Layout from '../components/layout/Layout';
-import { motion } from 'framer-motion';
 import { useAuth } from '../context/AuthContext';
 import { supabase } from '../lib/supabase';
 import { 
   FileText,
-  ShieldCheck, Eye, Zap, ArrowUpRight,
+  ShieldCheck, Eye, Zap,
   MoreVertical, Trash2, Globe
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -15,11 +14,6 @@ const BlogDashboard = () => {
   const { profile } = useAuth();
   const [blogs, setBlogs] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    fetchBlogs();
-  }, [profile]);
 
   const fetchBlogs = async () => {
     try {
@@ -32,10 +26,13 @@ const BlogDashboard = () => {
       setBlogs(data || []);
     } catch (error) {
       console.error('Error fetching blogs:', error.message);
-    } finally {
-      setLoading(false);
     }
   };
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    fetchBlogs();
+  }, [profile]);
 
   const filteredBlogs = blogs.filter(blog => 
     blog.title.toLowerCase().includes(searchTerm.toLowerCase())
@@ -132,8 +129,8 @@ const BlogDashboard = () => {
                     </div>
                   </td>
                   <td className="px-8 py-6 font-bold text-brand-text text-sm">
-                    {/* Dummy views for demo since we don't track views yet */}
-                    {Math.floor(Math.random() * 1000)}
+                    {/* Placeholder views */}
+                    —
                   </td>
                   <td className="px-8 py-6">
                     <span className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${

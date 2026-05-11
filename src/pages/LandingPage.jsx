@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  ArrowRight, ShieldCheck, FileText, Users, Star, Phone
+  ArrowRight, Star, Phone
 } from 'lucide-react';
 import PublicLayout from '../components/layout/PublicLayout';
 import ServicesSection from '../components/sections/ServicesSection';
@@ -32,43 +32,7 @@ const heroImages = [
   '/hero-3.png'
 ];
 
-const features = [
-  {
-    icon: Users,
-    title: 'Direct Talent Sourcing',
-    desc: 'Find the best professionals for your UK team with our data-driven recruiting engine.'
-  },
-  {
-    icon: ShieldCheck,
-    title: 'Executive Search',
-    desc: "Discreet and high-impact hiring for your company's leadership roles."
-  },
-  {
-    icon: FileText,
-    title: 'Strategic Planning',
-    desc: 'Align your workforce with your business goals through expert HR strategy.'
-  },
-];
 
-const FeatureCard = ({ icon: Icon, title, desc, delay }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.7, delay, ease: [0.16, 1, 0.3, 1] }}
-    whileHover={{ y: -10, transition: { duration: 0.3 } }}
-    className="bg-white p-10 rounded-[40px] border border-brand-border hover:shadow-2xl transition-all group h-full flex flex-col"
-  >
-    <div className="w-16 h-16 rounded-2xl bg-brand-blue-50 flex items-center justify-center mb-8 group-hover:bg-brand-blue-500 transition-colors duration-500">
-      <Icon size={28} className="text-brand-blue-500 group-hover:text-white transition-colors duration-500" />
-    </div>
-    <h3 className="font-display font-extrabold text-2xl mb-4 text-brand-text">{title}</h3>
-    <p className="text-brand-muted leading-relaxed font-medium text-base flex-1">{desc}</p>
-    <div className="mt-8 flex items-center gap-3 text-sm font-bold text-brand-blue-500">
-      LEARN MORE <div className="w-6 h-[2px] bg-brand-blue-500 group-hover:w-10 transition-all duration-300" />
-    </div>
-  </motion.div>
-);
 
 const LandingPage = () => {
   const [heroIdx, setHeroIdx] = useState(0);

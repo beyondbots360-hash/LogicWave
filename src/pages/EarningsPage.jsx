@@ -1,7 +1,5 @@
-import React from 'react';
 import Layout from '../components/layout/Layout';
-import { motion } from 'framer-motion';
-import { TrendingUp, CreditCard, ArrowUpRight, Download, Calendar, ExternalLink, Clock, FileText } from 'lucide-react';
+import { CreditCard, ArrowUpRight, Download, Calendar, ExternalLink, Clock, FileText } from 'lucide-react';
 
 const EarningsPage = () => {
   const earnings = [

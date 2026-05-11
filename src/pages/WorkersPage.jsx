@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { mockWorkers } from '../lib/mockData';
 import Layout from '../components/layout/Layout';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
-  Users, Plus, Search, Filter, Mail, CheckCircle,
-  Clock, AlertCircle, MoreHorizontal, X, Send,
+  Users, Plus, Search, Mail, CheckCircle,
+  Clock, X, Send,
   ShieldCheck, FileText, CreditCard, MapPin, ExternalLink
 } from 'lucide-react';
 

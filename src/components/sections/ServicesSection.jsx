@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { supabase } from '../../supabaseClient';
+import { useEffect, useState } from 'react';
+import { supabase } from '../../lib/supabaseClient';
 import { motion } from 'framer-motion';
 import { Headphones, Briefcase, Database, Calculator, Truck, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';

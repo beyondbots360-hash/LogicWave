@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, ChevronDown, ArrowRight } from 'lucide-react';
-import { supabase } from '../../supabaseClient';
+import { supabase } from '../../lib/supabaseClient';
 
 const PublicNavbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);

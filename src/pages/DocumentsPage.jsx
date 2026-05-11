@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Layout from '../components/layout/Layout';
 import { motion } from 'framer-motion';
 import { FileText, Upload, CheckCircle, AlertCircle, Shield, Info, Download, ArrowUpRight } from 'lucide-react';

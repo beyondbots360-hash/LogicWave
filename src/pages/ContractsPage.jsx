@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Layout from '../components/layout/Layout';
 import { supabase } from '../lib/supabase';
 import { mockWorkers } from '../lib/mockData';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  FileText, Plus, Search, Filter, MoreHorizontal, 
+  FileText, Plus, Search, Filter,
   CheckCircle2, Clock, AlertCircle, ArrowRight, X, Download
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -19,10 +19,6 @@ const ContractsPage = () => {
     contractor_id: '',
   });
 
-  useEffect(() => {
-    fetchContracts();
-  }, []);
-
   const fetchContracts = async () => {
     setLoading(true);
     const { data, error } = await supabase
@@ -34,6 +30,11 @@ const ContractsPage = () => {
     else setContracts(data);
     setLoading(false);
   };
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    fetchContracts();
+  }, []);
 
   const handleCreate = async (e) => {
     e.preventDefault();

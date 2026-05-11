@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   LayoutDashboard, Users, FileText, CreditCard,
-  Settings, LogOut, Briefcase, ChevronRight, ShieldCheck, HelpCircle, X, BarChart2, Bot, Sparkles
+  LogOut, ShieldCheck, X, BarChart2, Bot, Sparkles
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useAuth } from '../../context/AuthContext';
