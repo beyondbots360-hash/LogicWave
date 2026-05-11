@@ -50,29 +50,28 @@ const PublicLayout = ({ children }) => {
         {children}
       </main>
 
-      <footer className="bg-[#0f172a] text-white pt-20 pb-10 px-8">
+      <footer className="bg-[#0f172a] text-white pt-24 pb-12 px-8">
         <div className="max-w-7xl mx-auto">
 
           {/* Main grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
 
             {/* Col 1 – Brand */}
             <div>
-              <div className="mb-6">
+              <div className="mb-8">
                 <img src="/logo.png" alt="LogicWave" className="h-10 w-auto brightness-0 invert" />
               </div>
-              <p className="text-brand-slate-400 text-sm leading-relaxed mb-8">
-                The world's most compliant global employment platform. We help UK businesses hire, pay, and manage remote talent in India with zero legal overhead.
+              <p className="text-brand-slate-400 text-[15px] leading-relaxed mb-8 font-medium">
+                Logic Wave Technologies provides skilled remote professionals and dedicated teams to help businesses build high-performance teams at optimized local costs.
               </p>
-              <div className="flex gap-3">
+              <div className="flex gap-4">
                 {socialLinks.map((s) => (
                   <a
                     key={s.label}
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={s.label}
-                    className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-brand-slate-400 hover:bg-brand-blue-500 hover:text-white transition-all"
+                    className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-brand-slate-400 hover:bg-brand-blue-500 hover:text-white transition-all border border-white/5"
                   >
                     <s.Icon />
                   </a>
@@ -80,84 +79,63 @@ const PublicLayout = ({ children }) => {
               </div>
             </div>
 
-            {/* Col 2 – Resources */}
+            {/* Col 2 – Contact */}
             <div>
-              <h4 className="font-display font-black text-sm mb-8 uppercase tracking-widest text-white/70">Resources</h4>
+              <h4 className="font-display font-black text-sm mb-10 uppercase tracking-widest text-white/90">Contact</h4>
+              <ul className="space-y-6">
+                <li className="flex items-center gap-4 group">
+                  <Phone size={18} className="text-brand-blue-400 group-hover:scale-110 transition-transform" />
+                  <a href="tel:+919144128440" className="text-brand-slate-300 text-[15px] font-bold hover:text-white transition-colors">+91 91441 28440</a>
+                </li>
+                <li className="flex items-center gap-4 group">
+                  <Mail size={18} className="text-brand-blue-400 group-hover:scale-110 transition-transform" />
+                  <a href="mailto:info@logicwavetechnologies.com" className="text-brand-slate-300 text-[15px] font-bold hover:text-white transition-colors">info@logicwavetechnologies.com</a>
+                </li>
+                <li className="flex items-start gap-4 group">
+                  <MapPin size={18} className="text-brand-blue-400 group-hover:scale-110 transition-transform mt-1" />
+                  <p className="text-brand-slate-300 text-[15px] font-bold leading-relaxed">Pury Rd, Towcester NN12 7SU, United Kingdom</p>
+                </li>
+              </ul>
+              <div className="mt-10">
+                <a 
+                  href="https://calendly.com/logicwavetechnologies/30min" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 px-6 py-4 rounded-xl border border-white/20 text-xs font-black uppercase tracking-widest hover:bg-white hover:text-[#0f172a] transition-all group"
+                >
+                  Schedule a Meeting <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
+            </div>
+
+            {/* Col 3 – Top Links */}
+            <div>
+              <h4 className="font-display font-black text-sm mb-10 uppercase tracking-widest text-white/90">Top Links</h4>
               <ul className="space-y-4">
-                {resourceLinks.map((link) => (
-                  <li key={link.label}>
-                    <Link
-                      to={link.href}
-                      className="text-brand-slate-400 text-sm font-medium hover:text-brand-blue-400 transition-colors flex items-center gap-2 group"
-                    >
-                      {link.label}
-                      <ArrowUpRight size={12} className="opacity-0 group-hover:opacity-100 transition-opacity" />
-                    </Link>
-                  </li>
-                ))}
+                <li><Link to="/about" className="text-brand-slate-400 text-[15px] font-bold hover:text-brand-blue-400 transition-colors">About Us</Link></li>
+                <li><Link to="/blog" className="text-brand-slate-400 text-[15px] font-bold hover:text-brand-blue-400 transition-colors">Blog</Link></li>
+                <li><Link to="/terms" className="text-brand-slate-400 text-[15px] font-bold hover:text-brand-blue-400 transition-colors">Terms & Conditions</Link></li>
+                <li><Link to="/faq" className="text-brand-slate-400 text-[15px] font-bold hover:text-brand-blue-400 transition-colors">FAQ</Link></li>
               </ul>
             </div>
 
-            {/* Col 3 – Services */}
+            {/* Col 4 – Hire Professionals */}
             <div>
-              <h4 className="font-display font-black text-sm mb-8 uppercase tracking-widest text-white/70">Our Services</h4>
+              <h4 className="font-display font-black text-sm mb-10 uppercase tracking-widest text-white/90">Hire Professionals</h4>
               <ul className="space-y-4">
-                {serviceLinks.map((item) => (
-                  <li key={item}>
-                    <a href="#" className="text-brand-slate-400 text-sm font-medium hover:text-brand-blue-400 transition-colors">
-                      {item}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Col 4 – Contact */}
-            <div>
-              <h4 className="font-display font-black text-sm mb-8 uppercase tracking-widest text-white/70">Contact Us</h4>
-              <ul className="space-y-5">
-                <li className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0 mt-0.5">
-                    <MapPin size={15} className="text-brand-blue-400" />
-                  </div>
-                  <p className="text-brand-slate-400 text-sm leading-relaxed">
-                    1st Floor, 25-27 High St,<br />
-                    London, W5 5DB<br />
-                    United Kingdom
-                  </p>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
-                    <Phone size={15} className="text-brand-blue-400" />
-                  </div>
-                  <a href="tel:+442012345678" className="text-brand-slate-400 text-sm hover:text-white transition-colors">
-                    +44 (0) 20 123 4567
-                  </a>
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
-                    <Mail size={15} className="text-brand-blue-400" />
-                  </div>
-                  <a href="mailto:hello@logicwave.co.uk" className="text-brand-slate-400 text-sm hover:text-white transition-colors">
-                    hello@logicwave.co.uk
-                  </a>
-                </li>
+                <li><a href="#" className="text-brand-slate-400 text-[15px] font-bold hover:text-brand-blue-400 transition-colors">Hire Text & Call Support</a></li>
+                <li><a href="#" className="text-brand-slate-400 text-[15px] font-bold hover:text-brand-blue-400 transition-colors">Hire Email Support</a></li>
+                <li><a href="#" className="text-brand-slate-400 text-[15px] font-bold hover:text-brand-blue-400 transition-colors">Hire Data Entry Support</a></li>
+                <li><a href="#" className="text-brand-slate-400 text-[15px] font-bold hover:text-brand-blue-400 transition-colors">Hire Back Office Support</a></li>
               </ul>
             </div>
           </div>
 
           {/* Bottom bar */}
           <div className="pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-brand-slate-500 text-xs">
-              © 2026 LogicWave Solutions Ltd. All Rights Reserved.
+            <p className="text-brand-slate-500 text-xs font-bold">
+              Copyright © 2026 Logic Wave Technologies | All Right Reserved
             </p>
-            <div className="flex items-center gap-6 text-xs text-brand-slate-500">
-              <a href="#" className="hover:text-white transition-colors">GDPR Compliant</a>
-              <span>·</span>
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-              <span>·</span>
-              <a href="#" className="hover:text-white transition-colors">Terms & Conditions</a>
-            </div>
           </div>
         </div>
       </footer>
