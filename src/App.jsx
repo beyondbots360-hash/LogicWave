@@ -7,6 +7,8 @@ import LoginPage       from './pages/auth/LoginPage';
 import SignupPage      from './pages/auth/SignupPage';
 import BlogFeed        from './pages/BlogFeed';
 import BlogPostDetail  from './pages/BlogPostDetail';
+import ContactPage     from './pages/ContactPage';
+import PlaceholderPage from './pages/PlaceholderPage';
 
 // Shared (admin + contractor)
 import Dashboard       from './pages/Dashboard';
@@ -42,7 +44,10 @@ function App() {
           <Route path="/login"      element={<LoginPage />} />
           <Route path="/signup"     element={<SignupPage />} />
           <Route path="/blog"       element={<BlogFeed />} />
-          <Route path="/blog/:slug" element={<BlogPostDetail />} />
+          <Route path="/blog/:slug"  element={<BlogPostDetail />} />
+          <Route path="/contact"     element={<ContactPage />} />
+          <Route path="/about"       element={<PlaceholderPage title="About Us" />} />
+          <Route path="/case-studies" element={<PlaceholderPage title="Case Studies" />} />
 
           {/* ── Shared: admin + contractor ── */}
           <Route path="/dashboard" element={
